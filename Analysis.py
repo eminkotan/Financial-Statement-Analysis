@@ -1,17 +1,28 @@
-import GetData as gd
+import FinancialStatementAnalysis as fsa
 
 
+
+
+# Define the symbol, beginning year, ending year, exchange, and financial group
 symbol = "TTRAK"
 begYear = 2008
 endYear = 2024
 exchange = "TRY"
 financialGroup = 1
 
-dc = gd.get_data(symbol, begYear, endYear, exchange, financialGroup, True)
-
-df = gd.framed(dc, symbol)
-#gd.trendAnalysis(df_Karsan,"Net Sales", "NET PROFIT AFTER TAXES", symbol)
+# Calculate the financial ratios
+ratios = fsa.calcAll(symbol,begYear, endYear,exchange,financialGroup)
 
 
-# Sadece sayısal sütunları seçin
-gd.trendAnalysis(df, "CURRENT ASSETS", symbol, 3, "quarterly", "itemDescEng", "pct")
+### PLOTTING
+
+# Define the selected ratios
+selected_ratios = ["Current Ratio", "Quick Ratio"]
+# Ensure 'output_file' is a string
+output_file_name = 'selected_financial_ratios.png'
+
+#plot the selected ratios
+fsa.plot_ratios(ratios, output_file_name, selected_ratios)
+
+
+
