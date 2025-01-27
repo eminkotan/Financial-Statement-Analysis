@@ -48,7 +48,7 @@ ratios = fsa.calcAll(symbol, begYear, endYear, exchange, financialGroup)
 output_file_name = 'selected_financial_ratios.png'
 
 # Seçilen finansal oranları grafikleştir
-fsa.plot_ratios(ratios, output_file_name, selected_ratios)
+fsa.plot_ratios(symbol, ratios, output_file_name, selected_ratios)
 ```
 
 ### Parametreler
@@ -132,7 +132,7 @@ ratios = fsa.calcAll(symbol, begYear, endYear, exchange, financialGroup)
 output_file_name = 'selected_financial_ratios.png'
 
 # Plot selected financial ratios
-fsa.plot_ratios(ratios, output_file_name, selected_ratios)
+fsa.plot_ratios(symbol, ratios, output_file_name, selected_ratios)
 ```
 
 ### Parameters
