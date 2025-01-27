@@ -382,7 +382,7 @@ def calcAll(symbol, begYear, endYear, exchange, financialGroup, print_ratios=Fal
         return ratios
 
 
-def plot_ratios(ratios, output_file='ratios_plot.png', selected_ratios=None):
+def plot_ratios(symbol, ratios, output_file='ratios_plot.png', selected_ratios=None):
     """
     Plots selected financial ratios over time and saves the plot to an image file.
 
@@ -407,7 +407,7 @@ def plot_ratios(ratios, output_file='ratios_plot.png', selected_ratios=None):
             print(f"Warning: Ratio '{ratio_name}' not found in the provided data.")
 
     # Set plot title and labels
-    ax.set_title('Financial Ratios Over Time')
+    ax.set_title(f"{symbol} Financial Ratios Over Time")
     ax.set_xlabel('Period')
     ax.set_ylabel('Ratio Value')
 
